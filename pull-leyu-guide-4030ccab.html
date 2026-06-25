@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>leyu · 知识库入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f9fafb;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+            color: #1e1e2a;
+            line-height: 1.7;
+            padding: 2rem 1rem 4rem;
+        }
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            padding: 3rem 2rem 4rem;
+        }
+        @media (max-width: 520px) {
+            .page {
+                padding: 2rem 1.2rem 3rem;
+                border-radius: 16px;
+            }
+            body {
+                padding: 0.8rem;
+            }
+        }
+        /* 标题层级 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 480;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+            line-height: 1.2;
+            color: #0b0b14;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #5d5d72;
+            border-bottom: 1px solid #eaeef2;
+            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 440;
+            margin: 2.2rem 0 0.8rem;
+            letter-spacing: -0.01em;
+            color: #14141f;
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+        }
+        h2::before {
+            content: "—";
+            color: #babfcc;
+            font-weight: 300;
+            margin-right: 0.15rem;
+        }
+        h3 {
+            font-size: 1rem;
+            font-weight: 440;
+            margin: 1.6rem 0 0.4rem;
+            color: #1f1f30;
+        }
+        p {
+            margin: 0.8rem 0;
+            color: #2c2c3e;
+        }
+        a {
+            color: #1f4b8c;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border 0.15s;
+            font-weight: 430;
+        }
+        a:hover {
+            border-bottom-color: #1f4b8c;
+        }
+        /* 卡片 · 目录感布局 */
+        .dir-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.5rem 0 1.2rem;
+        }
+        .dir-item {
+            background: #f5f7fa;
+            border-radius: 18px;
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.5rem 1rem;
+            border-left: 4px solid #cbd5e1;
+            transition: background 0.2s;
+        }
+        .dir-item:hover {
+            background: #edf1f6;
+        }
+        .dir-tag {
+            font-size: 0.8rem;
+            font-weight: 450;
+            letter-spacing: 0.02em;
+            color: #4b5a72;
+            background: white;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            border: 1px solid #d7dfe8;
+            flex-shrink: 0;
+        }
+        .dir-desc {
+            color: #2d3748;
+            flex: 1;
+            min-width: 180px;
+        }
+        .dir-desc strong {
+            font-weight: 500;
+        }
+        .note-box {
+            background: #f0f3f9;
+            border-radius: 20px;
+            padding: 1.4rem 1.6rem;
+            margin: 2rem 0 1.8rem;
+            border: 1px solid #e2e8f0;
+        }
+        .note-box p {
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+        }
+        .faq-mini {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 1.2rem 0 1.8rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid #edf0f5;
+            padding: 0.6rem 0;
+        }
+        .faq-q {
+            font-weight: 460;
+            color: #1f2937;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            font-size: 0.9rem;
+            color: #4b4b60;
+        }
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.4rem;
+            border-top: 1px solid #e3e8ef;
+            font-size: 0.85rem;
+            color: #5c6b7e;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+        .tag-mild {
+            background: #eef2f6;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            color: #3b4a5e;
+            display: inline-block;
+        }
+        .inline-code {
+            background: #f0f2f5;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            font-family: 'SF Mono', ui-monospace, monospace;
+            font-size: 0.9em;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #eaeff3;
+            margin: 2rem 0 0.5rem;
+        }
+        .quiet {
+            color: #5f6d82;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>leyu · 知识库入口</h1>
+    <div class="subhead">稳定入口 · 信息索引 · 说明区</div>
+
+    <!-- 叙述性介绍 -->
+    <p>
+        这是一个围绕 <a href="https://pull-leyu.com.cn">leyu</a> 整理的轻量知识库页面。
+        作为信息索引的起点，这里不堆砌功能列表，而是把分散的说明、提示和相关资源归拢在一起。
+        你可以把它看作一份静态的目录——既描述 leyu 本身的定位，也记录一些常见疑问和背景。
+    </p>
+
+    <!-- 目录感布局：卡片式信息区 -->
+    <h2>索引区 · 三个说明点</h2>
+    <div class="dir-grid">
+        <div class="dir-item">
+            <span class="dir-tag">01 背景</span>
+            <span class="dir-desc"><strong>leyu</strong> 指向一个独立的站点，从域名结构看，它承载了特定的内容或服务。</span>
+        </div>
+        <div class="dir-item">
+            <span class="dir-tag">02 访问</span>
+            <span class="dir-desc">直接通过 <a href="https://pull-leyu.com.cn">leyu</a> 进入，无需中间跳转。页面始终使用 HTTPS，连接是加密的。</span>
+        </div>
+        <div class="dir-item">
+            <span class="dir-tag">03 维护</span>
+            <span class="dir-desc">站点持续更新，本页作为知识库入口会同步补充新的说明和链接。</span>
+        </div>
+    </div>
+
+    <!-- 说明区 + 提示区 -->
+    <h2>说明区 · 几个细节</h2>
+    <p>
+        这个页面本身不替代 leyu 站内的功能，而是提供一个<em>静态说明面</em>。
+        你可以通过上面的卡片快速了解 leyu 的访问方式与背景。下方还整理了常见问题片段。
+    </p>
+    <div class="note-box">
+        <p><span class="tag-mild">📌 提示</span> 如果你对 leyu 还不熟悉，可以先阅读本页的 FAQ 摘要，再通过链接 <a href="https://pull-leyu.com.cn">leyu</a> 直接体验。保持浏览器与网络稳定即可。</p>
+        <p style="margin-top:0.6rem;"><span class="tag-mild">🔍 相关信息</span> 目录索引会定期更新：包括使用场景、常见疑问、资源入口。当前版本侧重基础说明。</p>
+    </div>
+
+    <!-- 相关信息区 FAQ 摘要 -->
+    <h2>相关信息 · 常见疑问摘要</h2>
+    <div class="faq-mini">
+        <div class="faq-item">
+            <div class="faq-q">leyu 是什么？</div>
+            <div class="faq-a">一个独立的站点，可通过域名 pull-leyu.com.cn 访问。本页是其知识库入口，不改变站点本身的定义。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">如何确保访问的是正确站点？</div>
+            <div class="faq-a">建议直接使用本页提供的链接 <a href="https://pull-leyu.com.cn">leyu</a>，并核对浏览器地址栏的域名。不要通过未经核实的第三方链接进入。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">页面内容是否代表官方说明？</div>
+            <div class="faq-a">本页是独立的介绍页，内容基于公开信息整理。具体条款或政策以 leyu 站内公示为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">遇到访问问题怎么办？</div>
+            <div class="faq-a">首先检查本地网络与 DNS 解析。如果持续无法连接，可以稍后重试 —— 本页聚合的 <a href="https://pull-leyu.com.cn">leyu</a> 入口长期有效。</div>
+        </div>
+    </div>
+
+    <!-- 额外区块：场景/节奏变化，非重复 -->
+    <h2>补充 · 使用节奏</h2>
+    <p>
+        知识库页面不需要频繁刷新。你可以把它当作一个<strong>导航锚点</strong>：当需要稳定入口时，回到这里，点击 <a href="https://pull-leyu.com.cn">leyu</a>。
+        页面本身保持克制，不放置动态追踪或弹窗。所有链接均指向 leyu 域名本身。
+    </p>
+    <p class="quiet">
+        <span class="inline-code"># 本页状态</span> 只读 / 目录 / 静态说明 · 下次更新会补充更多相关条目。
+    </p>
+
+    <hr>
+    <div class="footer-note">
+        <span>知识库入口 · leyu 索引页</span>
+        <span>版本 2025 · 内容仅作说明</span>
+    </div>
+
+</div>
+</body>
+</html>
